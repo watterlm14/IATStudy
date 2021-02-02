@@ -172,6 +172,20 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			touchMaxStimulusHeight : '50%', 
 			bottomTouchCss: {}, //Add any CSS value you want for changing the css of the bottom touch area.
 
+			function show_image(src, width, height, alt) {
+    var img = document.createElement("Empatica.jpg");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    img.alt = alt;
+<button onclick=
+    "show_image('Empatica.jpg', 
+                 276, 
+                 110, 
+                 'Google Logo');">Commands</button> 
+    // This next line will just add it to the <body> tag
+    document.body.appendChild(img);
+			
 			//Instructions text.
 			// You can use the following variables and they will be replaced by
 			// the name of the categories and the block's number variables:
