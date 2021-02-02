@@ -151,7 +151,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 
 			errorCorrection : true, //Should participants correct error responses?
 			errorFBDuration : 500, //Duration of error feedback display (relevant only when errorCorrection is false)
-			ITIDuration : 250, //Duration between trials.
+			ITIDuration : 1000, //Duration between trials.
 
 			fontColor : '#000000', //The default color used for printed messages.
 			
@@ -165,7 +165,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			
 			instWidth : 99, //The width of the instructions stimulus
             
-			finalText : 'Press space to continue to the next task', 
+			finalText : 'media : {image:Empatica.jpg}',
 			finalTouchText : 'Touch the bottom green area to continue to the next task',
 
 			touchMaxStimulusWidth : '50%', 
