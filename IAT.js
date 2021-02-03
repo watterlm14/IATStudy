@@ -172,7 +172,33 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			touchMaxStimulusHeight : '50%', 
 			bottomTouchCss: {}, //Add any CSS value you want for changing the css of the bottom touch area.
 
-						
+			//TRYING to get the EDA Slide In
+			EDASlide: '<div><p align="center" style="font-size:20px; font-family:arial">' +
+				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
+				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
+				'EDA GOES HERE <font color="#0000ff">leftAttribute.</font>' +
+				'<br/>Put a right finger on the <b>I</b> key for items that belong to the category <font color="#0000ff">rightAttribute</font>.<br/><br/>' +
+				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
+				'Press the other key to continue.<br/>' +
+				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>'+
+				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+			EDASlideTouch: [
+				'<div>',
+					'<p align="center">',
+						'<u>Part blockNum of nBlocks</u>',
+					'</p>',
+					'<p align="left" style="margin-left:5px">',
+						'<br/>',
+						'EDA <font color="#0000ff">leftAttribute</font>.<br/>',
+						'Put a right finger over the <b>right</b> green area for items that belong to the category <font color="#0000ff">rightAttribute</font>.<br/>',
+						'Items will appear one at a time.<br/>',
+						'<br/>',
+						'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.',
+					'</p>',
+					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
+				'</div>'
+			].join('\n'),
+			
 			//Instructions text.
 			// You can use the following variables and they will be replaced by
 			// the name of the categories and the block's number variables:
@@ -1018,6 +1044,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 		blockParamsCats.nTrials = globalObj.blockCategories_nTrials;
 		blockParamsCats.blockNum = iBlock;
 		blockParamsCats.nCats = 2;
+		blockParamsCats.instTemplate = isTouch ? globalObj.EDASlideTouch : globalObj.EDASlide;
 		blockParamsCats.instTemplate = isTouch ? globalObj.instCategoriesPracticeTouch : globalObj.instCategoriesPractice;
 
 		var blockLayout = getLayout(blockParamsCats);
